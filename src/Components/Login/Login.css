@@ -35,4 +35,11 @@
     justify-content: center;
     cursor: pointer;
   }
+
+  .signup-btn button:hover {
+    text-decoration: inherit;
+    color: inherit;
+    background-color: #ffff;
+    color: #002f34;
+  }
   

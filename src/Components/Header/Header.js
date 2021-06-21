@@ -1,12 +1,27 @@
-import React from 'react';
+import React, { useContext } from "react";
 
-import './Header.css';
-import OlxLogo from '../../assets/OlxLogo';
-import Search from '../../assets/Search';
-import Arrow from '../../assets/Arrow';
-import SellButton from '../../assets/SellButton';
-import SellButtonPlus from '../../assets/SellButtonPlus';
+import "./Header.css";
+import OlxLogo from "../../assets/OlxLogo";
+import Search from "../../assets/Search";
+import Arrow from "../../assets/Arrow";
+import SellButton from "../../assets/SellButton";
+import SellButtonPlus from "../../assets/SellButtonPlus";
+import { NavLink, useHistory } from "react-router-dom";
+import { AuthContext, FirebaseContext } from "../../store/Context";
+
 function Header() {
+
+  const { user } = useContext(AuthContext);
+  const { firebase } = useContext(FirebaseContext);
+
+  const history = useHistory();
+
+  const handleLogout = () => {
+    firebase.auth().signOut();
+    history.push("/login");
+  };
+
+
   return (
     <div className="headerParentDiv">
       <div className="headerChildDiv">
@@ -33,11 +48,20 @@ function Header() {
           <span> ENGLISH </span>
           <Arrow></Arrow>
         </div>
-        <div className="loginPage">
-          <span>Login</span>
+        <div className="Account">
+          <span >
+            {user ? (
+              user.displayName
+            ) : 
+            (
+              <NavLink className="text-link" to="/login">
+                Login
+              </NavLink>
+            )}
+          </span>
           <hr />
         </div>
-
+        {user && <span onClick={handleLogout}> Logout </span>}
         <div className="sellMenu">
           <SellButton></SellButton>
           <div className="sellMenuContent">
