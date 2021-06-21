@@ -62,13 +62,15 @@ function Header() {
           <hr />
         </div>
         {user && <span onClick={handleLogout}> Logout </span>}
-        <div className="sellMenu">
+        <NavLink to="/create">
+        <div className="sellMenu" >
           <SellButton></SellButton>
           <div className="sellMenuContent">
             <SellButtonPlus></SellButtonPlus>
             <span>SELL</span>
           </div>
         </div>
+      </NavLink>
       </div>
     </div>
   );
