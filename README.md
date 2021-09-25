@@ -2,7 +2,7 @@
 
 OLX clone web application build with react and deployed in Firebase
 hosting via Github Action
-Hosted Link:  olx-clone-nsfdev2.web.app 
+Hosted Link:  https://olx-clone-nsfdev2.web.app
 
 ## Installation
 
