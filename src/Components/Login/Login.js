@@ -5,7 +5,7 @@ import "./Login.css";
 import { NavLink, useHistory } from "react-router-dom";
 
 function Login() {
-  //States for storing data locally
+  //States for storing data
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 

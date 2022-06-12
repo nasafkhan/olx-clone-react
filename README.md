@@ -8,4 +8,4 @@ Hosted Link:  https://olx-clone-nsfdev2.web.app
 
 Clone the repository
 Run 'npm install' to install the dependencies
-Run 'npm start' to start the local server
+Run 'npm start run' to start the local server
